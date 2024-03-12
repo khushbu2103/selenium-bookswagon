@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="ListenerPackage.Listener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="C:/Users/LENOVO/IdeaProjects/PageObjectModel">
+        <classes>
+            <class name="TestCases.HomePageTest">
+                <methods>
+                    <include name="verifyHomePageTitleTest"/>
+                    <include name="verifyUserNameTest"/>
+                </methods>
+            </class>
+            <class name="TestCases.LoginPageTest">
+                <methods>
+                    <include name="loginTest"/>
+                    <include name="loginPageTitleTest"/>
+                    <include name="multiUserLoginTest"/>
+                </methods>
+            </class>
+            <class name="TestCases.PersonalSettingTest">
+                <methods>
+                    <include name="verifyPersonalSettingLableTest"/>
+                    <include name="verifyFirstNamePlaceholderTest"/>
+                </methods>
+            </class>
+            <class name="TestCases.SignUpTest">
+                <methods>
+                    <include name="signupTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
