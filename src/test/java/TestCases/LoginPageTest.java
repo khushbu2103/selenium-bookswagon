@@ -4,6 +4,9 @@ import Bookswagon_Base.TestBase;
 import Bookswagon_Pages.HomePage;
 import Bookswagon_Pages.LoginPage;
 import Bookswagon_Util.TestUtil;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -33,11 +36,15 @@ public class LoginPageTest extends TestBase
     }
 
     @Test(priority = 1)
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("User enter valid username & password")
     public void loginTest()
     {
         loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
     }
+
     @Test(priority = 2)
+    @Severity(SeverityLevel.BLOCKER)
     public void loginPageTitleTest()
     {
         String title=loginPage.validateLoginPageTitle();
@@ -54,6 +61,7 @@ public class LoginPageTest extends TestBase
         return data;
     }
 @Test(dataProvider = "getLoginTestData", priority = 3)
+@Severity(SeverityLevel.CRITICAL)
     public void multiUserLoginTest(String userName, String password)
     {
         log.info("Multiple user login method");

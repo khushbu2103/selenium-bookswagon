@@ -38,14 +38,10 @@ public class TestBase
     }
     public static void initialization()
     {
-//
-//        }
-
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.bookswagon.com/");
         WebElement myAccountButton= driver.findElement(By.id("ctl00_lblUser"));
         myAccountButton.click();
-//
     }
 }
